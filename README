@@ -1,0 +1,2 @@
+git remote add origin https://<access-token-name>:<access-token>@gitlab.com/myuser/myrepo.git
+ansible-playbook -i inventory create_raid.yml
