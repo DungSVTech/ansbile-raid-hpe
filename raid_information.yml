@@ -1,0 +1,20 @@
+- name: List RAID information on a HPE system
+  hosts: localhost
+  gather_facts: false
+  vars_files: my_var.yml
+
+  tasks:
+    - name: Get RAID information
+      uri:
+        url: "https://{{ host }}/redfish/v1/Systems/1/smartstorageconfig"
+        method: GET
+        user: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
+        force_basic_auth: yes
+        return_content: yes
+      register: result
+
+    - name: Display RAID information
+      debug:
+        var: result.content

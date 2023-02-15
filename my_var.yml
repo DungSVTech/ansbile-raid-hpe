@@ -1,0 +1,6 @@
+host: 10.1.17.3
+username: admin
+password: admin123
+raid: Raid1
+dataguard: Disabled
+logicaldrivename: LogicalSV07
